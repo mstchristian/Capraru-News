@@ -1,0 +1,4 @@
+.right-link-list {
+  flex: 1;
+  justify-content: right;
+}
