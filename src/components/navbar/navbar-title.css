@@ -1,4 +1,5 @@
 .navbar-title {
   text-align: center;
-  color: white;
+  color: var(--navbar-title-color);
+  margin: 12px 0 0 0;
 }
