@@ -1,13 +1,16 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./app.css";
-import Category from "./components/category-seach-bar/Category";
 import CenterLinkList from "./components/navbar/link-lists/CenterLinkList";
 import LeftLinkList from "./components/navbar/link-lists/LeftLinkList";
 import RightLinkList from "./components/navbar/link-lists/RightLinkList";
 import LinkListContainer from "./components/navbar/LinkListContainer";
 import DefaultLink from "./components/navbar/links/DefaultLink";
 import NavbarTitle from "./components/navbar/NavbarTitle";
-import CategorySearchBar from "./sections/CategorySearchBar";
 import Navbar from "./sections/Navbar";
+import Home from "./pages/Home";
+import News from "./pages/News";
+import ContactUs from "./pages/ContactUs";
+import Account from "./pages/Account";
 
 function App() {
   return (
@@ -16,25 +19,26 @@ function App() {
         <NavbarTitle>Capraru</NavbarTitle>
         <LinkListContainer>
           <LeftLinkList>
-            <DefaultLink>Inicio</DefaultLink>
+            <DefaultLink href="/">Inicio</DefaultLink>
           </LeftLinkList>
           <CenterLinkList>
-            <DefaultLink>Noticias</DefaultLink>
+            <DefaultLink href="/news">Noticias</DefaultLink>
             <DefaultLink>Categorías</DefaultLink>
-            <DefaultLink>Contáctanos</DefaultLink>
+            <DefaultLink href="/contact-us">Contáctanos</DefaultLink>
           </CenterLinkList>
           <RightLinkList>
-            <DefaultLink>Cuenta</DefaultLink>
+            <DefaultLink href="/account">Cuenta</DefaultLink>
           </RightLinkList>
         </LinkListContainer>
       </Navbar>
-      <CategorySearchBar>
-        <Category>Deportes</Category>
-        <Category>Tecnología</Category>
-        <Category>Entretenimiento</Category>
-        <Category>Educación</Category>
-        <Category>Películas</Category>
-      </CategorySearchBar>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="/account" element={<Account />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

@@ -1,9 +1,15 @@
 import "./default-link.css";
 
-function DefaultLink({ children }: { children: any }) {
+function DefaultLink({
+  children,
+  href = "#",
+}: {
+  children: any;
+  href?: string;
+}) {
   return (
     <li className="link-holder">
-      <a href="#" className="link">
+      <a href={href} className="link">
         {children}
       </a>
     </li>
