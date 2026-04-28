@@ -1,0 +1,12 @@
+.new-content .new-summary {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.new-content .new-image {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 7px;
+}

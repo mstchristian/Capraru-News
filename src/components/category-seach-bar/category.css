@@ -1,4 +1,4 @@
-.category-search-bar .category {
+.category {
   padding: 6px 12px;
   color: var(--category-color);
   text-decoration: none;
@@ -7,7 +7,7 @@
   transition: font-size ease-in-out 250ms;
 }
 
-.category-search-bar .category:hover {
+.category:hover {
   font-size: 18px;
 
   transition: font-size ease-in-out 250ms;
