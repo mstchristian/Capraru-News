@@ -69,7 +69,9 @@ function Home() {
           </New>
           <New>
             <NewContent>
-              Incendio controlado en un restaurante del centro
+              <NewTitle>
+                Incendio controlado en un restaurante del centro
+              </NewTitle>
             </NewContent>
             <NewContent>
               <NewSummary>
@@ -107,7 +109,9 @@ function Home() {
           </New>
           <New>
             <NewContent>
-              Nuevo parque urbano abre sus puertas al público
+              <NewTitle>
+                Nuevo parque urbano abre sus puertas al público
+              </NewTitle>
             </NewContent>
             <NewContent>
               <NewSummary>
