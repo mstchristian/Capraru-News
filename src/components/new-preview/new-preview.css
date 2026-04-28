@@ -1,0 +1,26 @@
+.new-preview {
+  border: 1px solid var(--new-border-color);
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  background-color: var(--new-preview-background-color);
+  padding: 10px;
+  transition:
+    transform 100ms ease-in-out,
+    100ms ease-in-out;
+}
+
+.new-preview:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.new-preview .preview-image {
+  width: 100%;
+  border-radius: 7px;
+}
+
+.new-preview .preview-text {
+  font-size: 12px;
+  color: var(--new-text-color);
+  text-align: center;
+}

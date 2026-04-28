@@ -3,12 +3,10 @@
   color: var(--category-color);
   text-decoration: none;
   font-size: 16px;
-
   transition: font-size ease-in-out 250ms;
 }
 
 .category:hover {
   font-size: 18px;
-
   transition: font-size ease-in-out 250ms;
 }

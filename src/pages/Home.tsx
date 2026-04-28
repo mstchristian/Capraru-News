@@ -1,15 +1,16 @@
 import "./home.css";
 import Category from "../components/category-seach-bar/Category";
 import CategorySearchBar from "../sections/CategorySearchBar";
-import New from "../components/New";
+import New from "../components/new/New";
 import NewContent from "../components/new/NewContent";
 import NewSummary from "../components/new/NewSummary";
 import NewImage from "../components/new/NewImage";
 import NewText from "../components/new/NewText";
-import tres_aguas from "../images/news/tres-aguas.png";
-import incendio_restaurante from "../images/news/incendio-restaurante.png";
-import parque_urbano from "../images/news/parque-urbano.png";
 import NewTitle from "../components/new/NewTitle";
+import NewPreview from "../components/new-preview/NewPreview";
+import NewsSection from "../sections/NewsSection";
+import NewsPreviewSection from "../sections/NewsPreviewSection";
+import test_image from "../images/test_image.png";
 
 function Home() {
   return (
@@ -23,132 +24,101 @@ function Home() {
       </CategorySearchBar>
       <div className="content">
         <div className="left-section">
-          <New>
-            <NewContent>
-              <NewTitle>Robo en el NewYorker</NewTitle>
-            </NewContent>
-            <NewContent>
-              <NewSummary>Sebastian David roba en el NewYorker</NewSummary>
-              <NewImage image_src={tres_aguas} />
-              <NewText>
-                Un joven identificado como Sebastián David protagonizó un robo
-                en una tienda de ropa de la cadena NewYorker durante la tarde
-                del pasado viernes. El incidente tuvo lugar en un centro
-                comercial concurrido, generando sorpresa entre clientes y
-                empleados que se encontraban en el establecimiento en ese
-                momento.
-              </NewText>
-              <NewText>
-                Según testigos presenciales, el individuo accedió a la tienda
-                con aparente normalidad y, tras recorrer varias secciones,
-                sustrajo varios artículos sin realizar el pago correspondiente.
-                Entre los objetos robados se encontrarían accesorios de valor
-                moderado, lo que llevó a los trabajadores a alertar rápidamente
-                al personal de seguridad.
-              </NewText>
-              <NewText>
-                El sospechoso abandonó el local con rapidez, aprovechando un
-                momento de distracción, lo que dificultó su detención inmediata.
-                Sin embargo, las cámaras de seguridad del establecimiento
-                habrían captado con claridad lo sucedido, y las autoridades ya
-                se encuentran revisando las grabaciones para proceder con la
-                identificación completa y posible localización del implicado.
-              </NewText>
-              <NewText>
-                Fuentes cercanas a la investigación han señalado que no se
-                registraron heridos ni incidentes violentos durante el suceso,
-                aunque sí se ha reforzado la vigilancia en la zona para evitar
-                hechos similares.
-              </NewText>
-              <NewText>
-                El caso continúa en investigación, mientras se espera que en los
-                próximos días se obtengan más detalles sobre lo ocurrido y las
-                posibles consecuencias legales para el autor del robo.
-              </NewText>
-            </NewContent>
-          </New>
-          <New>
-            <NewContent>
-              <NewTitle>
-                Incendio controlado en un restaurante del centro
-              </NewTitle>
-            </NewContent>
-            <NewContent>
-              <NewSummary>
-                Un incendio obliga a desalojar un restaurante céntrico
-              </NewSummary>
-              <NewImage image_src={incendio_restaurante} />
-              <NewText>
-                Un incendio se declaró en la cocina de un restaurante situado en
-                el centro de la ciudad durante la noche del sábado, provocando
-                la rápida evacuación de clientes y trabajadores presentes en el
-                local.
-              </NewText>
-              <NewText>
-                Según fuentes oficiales, el fuego se originó por un fallo en uno
-                de los electrodomésticos de cocina, lo que generó una gran
-                cantidad de humo en pocos minutos. El personal actuó con
-                rapidez, alertando a los servicios de emergencia.
-              </NewText>
-              <NewText>
-                Los bomberos acudieron al lugar en cuestión de minutos y
-                lograron controlar el incendio antes de que se propagara a otras
-                zonas del establecimiento o edificios cercanos.
-              </NewText>
-              <NewText>
-                Afortunadamente, no se registraron heridos, aunque varias
-                personas tuvieron que ser atendidas por inhalación leve de humo
-                en el lugar de los hechos.
-              </NewText>
-              <NewText>
-                Las autoridades han iniciado una investigación para determinar
-                las causas exactas del incidente, mientras el local permanecerá
-                cerrado temporalmente para su reparación.
-              </NewText>
-            </NewContent>
-          </New>
-          <New>
-            <NewContent>
-              <NewTitle>
-                Nuevo parque urbano abre sus puertas al público
-              </NewTitle>
-            </NewContent>
-            <NewContent>
-              <NewSummary>
-                Un nuevo espacio verde impulsa el ocio al aire libre
-              </NewSummary>
-              <NewImage image_src={parque_urbano} />
-              <NewText>
-                El ayuntamiento ha inaugurado un nuevo parque urbano diseñado
-                para fomentar el ocio y las actividades al aire libre entre los
-                ciudadanos. La apertura tuvo lugar durante la mañana del domingo
-                con una gran asistencia de vecinos.
-              </NewText>
-              <NewText>
-                El espacio cuenta con zonas ajardinadas, áreas deportivas,
-                parques infantiles y carriles para bicicletas, convirtiéndose en
-                un punto de encuentro para personas de todas las edades.
-              </NewText>
-              <NewText>
-                Durante la inauguración, representantes municipales destacaron
-                la importancia de invertir en espacios verdes para mejorar la
-                calidad de vida y promover hábitos saludables.
-              </NewText>
-              <NewText>
-                Los asistentes pudieron disfrutar de actividades organizadas
-                como talleres, música en directo y exhibiciones deportivas a lo
-                largo del día.
-              </NewText>
-              <NewText>
-                Este nuevo parque se suma a otras iniciativas similares que
-                buscan transformar la ciudad en un entorno más sostenible y
-                accesible para todos.
-              </NewText>
-            </NewContent>
-          </New>
+          <NewsSection>
+            <New>
+              <NewContent>
+                <NewTitle>Nueva IA revoluciona el desarrollo web</NewTitle>
+              </NewContent>
+              <NewContent>
+                <NewSummary>
+                  Herramientas inteligentes aceleran la creación de aplicaciones
+                </NewSummary>
+                <NewImage image_src={test_image} />
+                <NewText>
+                  Una nueva generación de inteligencia artificial está
+                  transformando la forma en la que los desarrolladores crean
+                  aplicaciones web. Estas herramientas permiten generar código,
+                  detectar errores y optimizar rendimiento en tiempo real.
+                </NewText>
+                <NewText>
+                  Empresas tecnológicas han comenzado a integrar estas
+                  soluciones en sus flujos de trabajo, reduciendo
+                  significativamente los tiempos de desarrollo y mejorando la
+                  calidad del software.
+                </NewText>
+                <NewText>
+                  Expertos aseguran que esta tendencia continuará creciendo,
+                  marcando un antes y un después en la industria del desarrollo
+                  web.
+                </NewText>
+              </NewContent>
+            </New>
+            <New>
+              <NewContent>
+                <NewTitle>Victoria histórica en la final de liga</NewTitle>
+              </NewContent>
+              <NewContent>
+                <NewSummary>
+                  Un partido emocionante se decide en los últimos minutos
+                </NewSummary>
+                <NewImage image_src={test_image} />
+                <NewText>
+                  El equipo local logró una victoria histórica tras un partido
+                  muy igualado que se decidió en los últimos minutos con un gol
+                  espectacular.
+                </NewText>
+                <NewText>
+                  La afición celebró intensamente el resultado, que marca un
+                  hito en la temporada y posiciona al equipo como uno de los
+                  favoritos.
+                </NewText>
+              </NewContent>
+            </New>
+            <New>
+              <NewContent>
+                <NewTitle>Aumenta el uso de bicicletas en la ciudad</NewTitle>
+              </NewContent>
+              <NewContent>
+                <NewSummary>
+                  La movilidad sostenible gana protagonismo entre los ciudadanos
+                </NewSummary>
+                <NewImage image_src={test_image} />
+                <NewText>
+                  Cada vez más personas optan por la bicicleta como medio de
+                  transporte diario, impulsando una movilidad más sostenible.
+                </NewText>
+                <NewText>
+                  Las autoridades han ampliado los carriles bici y fomentan el
+                  uso de este transporte con nuevas iniciativas.
+                </NewText>
+              </NewContent>
+            </New>
+          </NewsSection>
         </div>
         <div className="right-section">
-          <p>Right</p>
+          <NewsPreviewSection>
+            <NewPreview image_src={test_image} image_alt="Nuevo smartphone">
+              Nuevo smartphone promete revolucionar el mercado
+            </NewPreview>
+            <NewPreview image_src={test_image} image_alt="Energía renovable">
+              Descubren avances clave en energía renovable
+            </NewPreview>
+            <NewPreview image_src={test_image} image_alt="Festival de música">
+              Festival de música reúne a miles de personas
+            </NewPreview>
+            <NewPreview image_src={test_image} image_alt="Seguridad online">
+              Nueva actualización mejora la seguridad online
+            </NewPreview>
+            <NewPreview image_src={test_image} image_alt="Centro deportivo">
+              Apertura de centro deportivo en la ciudad
+            </NewPreview>
+            <NewPreview
+              image_src={test_image}
+              image_alt="Tendencias diseño web"
+            >
+              Tendencias en diseño web para 2026
+            </NewPreview>
+          </NewsPreviewSection>
         </div>
       </div>
     </div>
