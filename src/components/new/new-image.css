@@ -2,5 +2,6 @@
   width: 100%;
   object-fit: cover;
   display: block;
-  border-radius: 7px;
+  border-radius: 12px;
+  border: 1px solid var(--new-border-color);
 }
