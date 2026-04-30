@@ -6,7 +6,7 @@ import RightLinkList from "./components/navbar/link-lists/RightLinkList";
 import LinkListContainer from "./components/navbar/LinkListContainer";
 import DefaultLink from "./components/navbar/links/DefaultLink";
 import NavbarTitle from "./components/navbar/NavbarTitle";
-import Navbar from "./sections/Navbar";
+import Navbar from "./components/navbar/Navbar";
 import Home from "./pages/Home";
 import News from "./pages/News";
 import ContactUs from "./pages/ContactUs";

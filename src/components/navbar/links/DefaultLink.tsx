@@ -8,8 +8,8 @@ function DefaultLink({
   href?: string;
 }) {
   return (
-    <li className="link-holder">
-      <a href={href} className="link">
+    <li className="site-navbar__link-item">
+      <a href={href} className="site-navbar__link">
         {children}
       </a>
     </li>

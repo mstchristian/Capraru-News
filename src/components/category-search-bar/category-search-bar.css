@@ -1,11 +1,11 @@
-.category-search-bar {
+.category-search {
   width: 100%;
   display: flex;
   justify-content: center;
   margin: 25px;
 }
 
-.categories-container {
+.category-search__container {
   background-color: var(--category-search-bar-background-color);
   width: 75%;
   border-radius: 12px;

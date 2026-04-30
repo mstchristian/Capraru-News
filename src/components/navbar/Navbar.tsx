@@ -1,7 +1,7 @@
 import "./navbar.css";
 
 function Navbar({ children }: { children: any }) {
-  return <nav className="navbar">{children}</nav>;
+  return <nav className="site-navbar">{children}</nav>;
 }
 
 export default Navbar;

@@ -1,6 +1,6 @@
 import "./home.css";
-import Category from "../components/category-seach-bar/Category";
-import CategorySearchBar from "../sections/CategorySearchBar";
+import Category from "../components/category-search-bar/Category";
+import CategorySearchBar from "../components/category-search-bar/CategorySearchBar";
 import New from "../components/new/New";
 import NewContent from "../components/new/NewContent";
 import NewSummary from "../components/new/NewSummary";
@@ -8,8 +8,8 @@ import NewImage from "../components/new/NewImage";
 import NewText from "../components/new/NewText";
 import NewTitle from "../components/new/NewTitle";
 import NewPreview from "../components/new-preview/NewPreview";
-import NewsSection from "../sections/NewsSection";
-import NewsPreviewSection from "../sections/NewsPreviewSection";
+import NewsSection from "../components/layout/NewsSection";
+import NewsPreviewSection from "../components/layout/NewsPreviewSection";
 import test_image from "../images/test_image.png";
 
 function Home() {
