@@ -38,33 +38,49 @@ function Home() {
       <div className="content">
         <div className="left-section">
           <NewsSection>
-            {filteredNews.map((news) => (
-              <New key={news.id}>
-                <NewContent>
-                  <NewTitle>{news.title}</NewTitle>
-                </NewContent>
-                <NewContent>
-                  <NewSummary>{news.summary}</NewSummary>
-                  <NewImage image_src={news.image} />
-                  {news.texts.map((text, index) => (
-                    <NewText key={index}>{text}</NewText>
-                  ))}
-                </NewContent>
-              </New>
-            ))}
+            {filteredNews.length > 0 ? (
+              filteredNews.map((news) => (
+                <New key={news.id}>
+                  <NewContent>
+                    <NewTitle>{news.title}</NewTitle>
+                  </NewContent>
+                  <NewContent>
+                    <NewSummary>{news.summary}</NewSummary>
+                    <NewImage image_src={news.image} />
+                    {news.texts.map((text, index) => (
+                      <NewText key={index}>{text}</NewText>
+                    ))}
+                  </NewContent>
+                </New>
+              ))
+            ) : (
+              <p
+                style={{ textAlign: "center", padding: "20px", color: "#666" }}
+              >
+                No hay noticias en esta categoría.
+              </p>
+            )}
           </NewsSection>
         </div>
         <div className="right-section">
           <NewsPreviewSection>
-            {filteredPreviews.map((preview) => (
-              <NewPreview
-                key={preview.id}
-                image_src={preview.image_src}
-                image_alt={preview.image_alt}
+            {filteredPreviews.length > 0 ? (
+              filteredPreviews.map((preview) => (
+                <NewPreview
+                  key={preview.id}
+                  image_src={preview.image_src}
+                  image_alt={preview.image_alt}
+                >
+                  {preview.title}
+                </NewPreview>
+              ))
+            ) : (
+              <p
+                style={{ textAlign: "center", padding: "20px", color: "#666" }}
               >
-                {preview.title}
-              </NewPreview>
-            ))}
+                No hay previews en esta categoría.
+              </p>
+            )}
           </NewsPreviewSection>
         </div>
       </div>
