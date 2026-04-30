@@ -1,12 +1,21 @@
 .category-search__pill {
-  padding: 6px 12px;
+  padding: 8px 14px;
   color: var(--category-color);
-  text-decoration: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
   font-size: 16px;
-  transition: font-size ease-in-out 250ms;
+  border-radius: 999px;
+  transition:
+    background-color ease-in-out 200ms,
+    transform ease-in-out 200ms;
 }
 
 .category-search__pill:hover {
-  font-size: 18px;
-  transition: font-size ease-in-out 250ms;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.category-search__pill--selected {
+  background-color: var(--category-search-selected-background-color);
+  color: var(--category-search-selected-color);
 }

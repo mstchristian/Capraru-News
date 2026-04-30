@@ -1,10 +1,23 @@
 import "./category.css";
 
-function Category({ children }: { children: any }) {
+function Category({
+  children,
+  selected = false,
+  onSelect,
+}: {
+  children: any;
+  selected?: boolean;
+  onSelect?: () => void;
+}) {
   return (
-    <a href="#" className="category-search__pill">
+    <button
+      type="button"
+      onClick={onSelect}
+      className={`category-search__pill${selected ? " category-search__pill--selected" : ""}`}
+      aria-pressed={selected}
+    >
       {children}
-    </a>
+    </button>
   );
 }
 
