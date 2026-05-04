@@ -1,0 +1,10 @@
+.no-news-text,
+.no-previews-text {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+}
+
+.no-previews-text {
+  grid-column: span 2;
+}

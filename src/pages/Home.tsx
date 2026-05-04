@@ -12,6 +12,8 @@ import NewsSection from "../components/layout/NewsSection";
 import NewsPreviewSection from "../components/layout/NewsPreviewSection";
 import { useNewsFilter } from "../hooks/useNewsFilter";
 import { categoryLabels } from "../data/newsData";
+import NoNewsText from "../components/layout/no-news/NoNewsText";
+import NoPreviewsText from "../components/layout/no-news/NoPreviewsText";
 
 function Home() {
   const {
@@ -54,11 +56,7 @@ function Home() {
                 </New>
               ))
             ) : (
-              <p
-                style={{ textAlign: "center", padding: "20px", color: "#666" }}
-              >
-                No hay noticias en esta categoría.
-              </p>
+              <NoNewsText />
             )}
           </NewsSection>
         </div>
@@ -75,11 +73,7 @@ function Home() {
                 </NewPreview>
               ))
             ) : (
-              <p
-                style={{ textAlign: "center", padding: "20px", color: "#666" }}
-              >
-                No hay previews en esta categoría.
-              </p>
+              <NoPreviewsText />
             )}
           </NewsPreviewSection>
         </div>
