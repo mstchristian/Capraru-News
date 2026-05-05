@@ -1,13 +1,13 @@
-.home .content {
+.home__content {
   margin: 25px;
   display: flex;
   gap: 20px;
 }
 
-.home .content .left-section {
+.home__left-section {
   flex: 2;
 }
 
-.home .content .right-section {
+.home__right-section {
   flex: 1;
 }

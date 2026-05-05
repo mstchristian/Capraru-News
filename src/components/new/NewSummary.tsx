@@ -1,7 +1,7 @@
 import "./new-summary.css";
 
 function NewSummary({ children }: { children: any }) {
-  return <p className="new-summary">{children}</p>;
+  return <p className="new__summary">{children}</p>;
 }
 
 export default NewSummary;

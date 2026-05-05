@@ -1,0 +1,15 @@
+.dropdown__content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  background-color: var(--navbar-color);
+  min-width: 200px;
+  padding: 20px;
+  z-index: 1;
+  border-radius: 5px;
+}
+
+.dropdown__content--visible {
+  display: block;
+}

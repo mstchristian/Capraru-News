@@ -1,4 +1,4 @@
-.category-search__pill {
+.category-search-bar__pill {
   padding: 8px 14px;
   color: var(--category-color);
   background: transparent;
@@ -11,11 +11,11 @@
     transform ease-in-out 200ms;
 }
 
-.category-search__pill:hover {
+.category-search-bar__pill:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.category-search__pill--selected {
+.category-search-bar__pill--selected {
   background-color: var(--category-search-selected-background-color);
   color: var(--category-search-selected-color);
 }

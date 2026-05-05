@@ -11,8 +11,16 @@ import Home from "./pages/Home";
 import News from "./pages/News";
 import ContactUs from "./pages/ContactUs";
 import Account from "./pages/Account";
+import Dropdown from "./components/navbar/dropdown/Dropdown";
+import DropdownButton from "./components/navbar/dropdown/DropdownButton";
+import DropdownContent from "./components/navbar/dropdown/DropdownContent";
+import DropdownLink from "./components/navbar/dropdown/DropdownLink";
+import { useDropdown } from "./hooks/useDropdown";
+import { categories, categoryLabels } from "./data/newsData";
 
 function App() {
+  const { activeDropdownId, toggleDropdown } = useDropdown();
+
   return (
     <>
       <Navbar>
@@ -23,7 +31,23 @@ function App() {
           </LeftLinkList>
           <CenterLinkList>
             <DefaultLink href="/news">Noticias</DefaultLink>
-            <DefaultLink>Categorías</DefaultLink>
+            <Dropdown>
+              <DropdownButton
+                onClick={() => toggleDropdown("categories-dropdown")}
+              >
+                Categorías
+              </DropdownButton>
+              <DropdownContent
+                id="categories-dropdown"
+                isOpen={activeDropdownId === "categories-dropdown"}
+              >
+                {categories.slice(1, 4).map((category) => (
+                  <DropdownLink key={category}>
+                    {categoryLabels[category]}
+                  </DropdownLink>
+                ))}
+              </DropdownContent>
+            </Dropdown>
             <DefaultLink href="/contact-us">Contáctanos</DefaultLink>
           </CenterLinkList>
           <RightLinkList>

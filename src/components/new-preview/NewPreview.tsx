@@ -11,8 +11,8 @@ function NewPreview({
 }) {
   return (
     <div className="new-preview">
-      <img className="preview-image" src={image_src} alt={image_alt} />
-      <p className="preview-text">{children}</p>
+      <img className="new-preview__image" src={image_src} alt={image_alt} />
+      <p className="new-preview__text">{children}</p>
     </div>
   );
 }

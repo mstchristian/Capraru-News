@@ -14,12 +14,12 @@
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
 
-.new-preview .preview-image {
+.new-preview__image {
   width: 100%;
   border-radius: 7px;
 }
 
-.new-preview .preview-text {
+.new-preview__text {
   font-size: 12px;
   color: var(--new-text-color);
   text-align: center;

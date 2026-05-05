@@ -37,12 +37,12 @@ function Home() {
           </Category>
         ))}
       </CategorySearchBar>
-      <div className="content">
-        <div className="left-section">
+      <div className="home__content">
+        <div className="home__left-section">
           <NewsSection>
             {filteredNews.length > 0 ? (
               filteredNews.map((news) => (
-                <New key={news.id}>
+                <New key={news.id} category={categoryLabels[news.category]}>
                   <NewContent>
                     <NewTitle>{news.title}</NewTitle>
                   </NewContent>
@@ -60,7 +60,7 @@ function Home() {
             )}
           </NewsSection>
         </div>
-        <div className="right-section">
+        <div className="home__right-section">
           <NewsPreviewSection>
             {filteredPreviews.length > 0 ? (
               filteredPreviews.map((preview) => (

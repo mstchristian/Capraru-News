@@ -13,7 +13,7 @@ function Category({
     <button
       type="button"
       onClick={onSelect}
-      className={`category-search__pill${selected ? " category-search__pill--selected" : ""}`}
+      className={`category-search-bar__pill${selected ? " category-search-bar__pill--selected" : ""}`}
       aria-pressed={selected}
     >
       {children}
