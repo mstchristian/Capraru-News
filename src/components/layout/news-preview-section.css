@@ -3,9 +3,24 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   margin: 25px;
+  margin-top: 0;
   padding: 10px;
   border: 1px solid var(--new-border-color);
   border-radius: 16px;
-  overflow: hidden;
   background: #fff;
+
+  max-height: calc(
+    95vh - var(--navbar-height) - var(--category-bar-height) - 70px
+  );
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.news-preview-section::-webkit-scrollbar {
+  width: 8px;
+}
+
+.news-preview-section::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 999px;
 }

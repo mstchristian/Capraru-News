@@ -17,6 +17,7 @@ import DropdownContent from "./components/navbar/dropdown/DropdownContent";
 import DropdownLink from "./components/navbar/dropdown/DropdownLink";
 import { useDropdown } from "./hooks/useDropdown";
 import { categories, categoryLabels } from "./data/newsData";
+import NewsArticle from "./pages/NewsArticle";
 
 function App() {
   const { activeDropdownId, toggleDropdown } = useDropdown();
@@ -59,6 +60,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/news" element={<News />} />
+          <Route path="/news/:id" element={<NewsArticle />} />
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/account" element={<Account />} />
         </Routes>

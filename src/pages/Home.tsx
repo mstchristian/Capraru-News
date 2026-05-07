@@ -5,8 +5,8 @@ import New from "../components/new/New";
 import NewContent from "../components/new/NewContent";
 import NewSummary from "../components/new/NewSummary";
 import NewImage from "../components/new/NewImage";
-import NewText from "../components/new/NewText";
 import NewTitle from "../components/new/NewTitle";
+import NewText from "../components/new/NewText";
 import NewPreview from "../components/new-preview/NewPreview";
 import NewsSection from "../components/layout/NewsSection";
 import NewsPreviewSection from "../components/layout/NewsPreviewSection";
@@ -14,6 +14,7 @@ import { useNewsFilter } from "../hooks/useNewsFilter";
 import { categoryLabels } from "../data/newsData";
 import NoNewsText from "../components/layout/no-news/NoNewsText";
 import NoPreviewsText from "../components/layout/no-news/NoPreviewsText";
+import { Link } from "react-router-dom";
 
 function Home() {
   const {
@@ -27,7 +28,7 @@ function Home() {
   return (
     <div className="home">
       <CategorySearchBar>
-        {categories.map((category) => (
+        {categories.slice(0, 7).map((category) => (
           <Category
             key={category}
             selected={selectedCategory === category}
@@ -42,18 +43,24 @@ function Home() {
           <NewsSection>
             {filteredNews.length > 0 ? (
               filteredNews.map((news) => (
-                <New key={news.id} category={categoryLabels[news.category]}>
-                  <NewContent>
-                    <NewTitle>{news.title}</NewTitle>
-                  </NewContent>
-                  <NewContent>
-                    <NewSummary>{news.summary}</NewSummary>
-                    <NewImage image_src={news.image} />
-                    {news.texts.map((text, index) => (
-                      <NewText key={index}>{text}</NewText>
-                    ))}
-                  </NewContent>
-                </New>
+                <Link
+                  key={news.id}
+                  to={`/news/${news.id}`}
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  <New category={categoryLabels[news.category]}>
+                    <NewContent>
+                      <NewTitle>{news.title}</NewTitle>
+                    </NewContent>
+                    <NewContent>
+                      <NewSummary>{news.summary}</NewSummary>
+                      <NewImage image_src={news.image} />
+                      {news.texts.slice(0, 3).map((text, index) => (
+                        <NewText key={index}>{text}</NewText>
+                      ))}
+                    </NewContent>
+                  </New>
+                </Link>
               ))
             ) : (
               <NoNewsText />
@@ -64,13 +71,18 @@ function Home() {
           <NewsPreviewSection>
             {filteredPreviews.length > 0 ? (
               filteredPreviews.map((preview) => (
-                <NewPreview
+                <Link
                   key={preview.id}
-                  image_src={preview.image_src}
-                  image_alt={preview.image_alt}
+                  to={`/news/${preview.id}`}
+                  style={{ textDecoration: "none", color: "inherit" }}
                 >
-                  {preview.title}
-                </NewPreview>
+                  <NewPreview
+                    image_src={preview.image}
+                    image_alt={preview.image_alt ?? preview.title}
+                  >
+                    {preview.title}
+                  </NewPreview>
+                </Link>
               ))
             ) : (
               <NoPreviewsText />

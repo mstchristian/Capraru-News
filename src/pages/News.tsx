@@ -1,4 +1,5 @@
 import { useState, useMemo } from "react";
+import { Link } from "react-router-dom";
 import NewsSection from "../components/layout/NewsSection";
 import NewContent from "../components/new/NewContent";
 import NewTitle from "../components/new/NewTitle";
@@ -28,18 +29,24 @@ function News() {
       <NewsSection>
         {filteredNews.length > 0 ? (
           filteredNews.map((news) => (
-            <New key={news.id} category={categoryLabels[news.category]}>
-              <NewContent>
-                <NewTitle>{news.title}</NewTitle>
-              </NewContent>
-              <NewContent>
-                <NewSummary>{news.summary}</NewSummary>
-                <NewImage image_src={news.image} />
-                {news.texts.map((text, index) => (
-                  <NewText key={index}>{text}</NewText>
-                ))}
-              </NewContent>
-            </New>
+            <Link
+              key={news.id}
+              to={`/news/${news.id}`}
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              <New category={categoryLabels[news.category]}>
+                <NewContent>
+                  <NewTitle>{news.title}</NewTitle>
+                </NewContent>
+                <NewContent>
+                  <NewSummary>{news.summary}</NewSummary>
+                  <NewImage image_src={news.image} />
+                  {news.texts.slice(0, 3).map((text, index) => (
+                    <NewText key={index}>{text}</NewText>
+                  ))}
+                </NewContent>
+              </New>
+            </Link>
           ))
         ) : (
           <NoNewsText />

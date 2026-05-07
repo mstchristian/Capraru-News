@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { categories, newsItems, previewItems } from "../data/newsData";
+import { categories, newsItems } from "../data/newsData";
 
 export function useNewsFilter() {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -13,9 +13,9 @@ export function useNewsFilter() {
 
   const filteredPreviews = useMemo(() => {
     if (selectedCategory === "all") {
-      return previewItems;
+      return newsItems;
     }
-    return previewItems.filter((item) => item.category === selectedCategory);
+    return newsItems.filter((item) => item.category === selectedCategory);
   }, [selectedCategory]);
 
   return {

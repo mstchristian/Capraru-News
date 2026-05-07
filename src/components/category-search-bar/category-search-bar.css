@@ -2,12 +2,19 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  margin: 25px;
+  position: fixed;
+  top: var(--navbar-height);
+  left: 0;
+  right: 0;
+  z-index: 900;
+  padding: 15px 0;
+  background: transparent;
 }
 
 .category-search-bar__container {
   background-color: var(--category-search-bar-background-color);
   width: 75%;
+  max-width: 1200px;
   border-radius: 12px;
   padding: 10px;
   text-align: center;
