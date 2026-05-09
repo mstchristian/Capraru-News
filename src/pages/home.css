@@ -3,7 +3,7 @@
   flex-direction: column;
   height: calc(100vh - var(--navbar-height));
   padding-top: calc(var(--category-bar-height) + 15px);
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 .home__content {

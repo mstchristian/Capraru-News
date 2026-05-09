@@ -1,0 +1,16 @@
+.news {
+  height: calc(100vh - var(--navbar-height));
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.news__content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 25px;
+}
+
+.news__content::-webkit-scrollbar {
+  display: none;
+}

@@ -1,7 +1,7 @@
 .new {
   border: 1px solid var(--new-border-color);
   border-radius: 16px;
-  overflow: hidden;
+  overflow: visible;
   background: #fff;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   margin-bottom: 25px;
