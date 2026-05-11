@@ -1,0 +1,48 @@
+.contact-us {
+  width: 100%;
+  height: calc(100vh - var(--navbar-height));
+}
+
+.contact-us__content {
+  margin: 50px 100px;
+  background-color: var(--contact-us-background-color);
+  border: solid 1px #000;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-us__form {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+}
+
+.contact-us__input {
+  border: solid 1px var(--contact-us-input-border-color);
+  border-radius: 12px;
+  height: 25px;
+  margin: 15px 0;
+  padding: 5px;
+  font-weight: 500;
+}
+
+.contact-us__input:focus {
+  outline: none;
+  border-color: var(--contact-us-input-border-color);
+}
+
+.contact-us__textarea {
+  resize: none;
+  margin: 15px 0;
+  padding: 5px;
+  border: solid 1px var(--contact-us-input-border-color);
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.contact-us__textarea:focus {
+  outline: none;
+  border-color: var(--contact-us-input-border-color);
+}
