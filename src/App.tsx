@@ -2,7 +2,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./app.css";
 import CenterLinkList from "./components/navbar/link-lists/CenterLinkList";
 import LeftLinkList from "./components/navbar/link-lists/LeftLinkList";
-import RightLinkList from "./components/navbar/link-lists/RightLinkList";
 import LinkListContainer from "./components/navbar/LinkListContainer";
 import DefaultLink from "./components/navbar/links/DefaultLink";
 import NavbarTitle from "./components/navbar/NavbarTitle";
@@ -10,7 +9,6 @@ import Navbar from "./components/navbar/Navbar";
 import Home from "./pages/Home";
 import News from "./pages/News";
 import ContactUs from "./pages/ContactUs";
-import Account from "./pages/Account";
 import Dropdown from "./components/navbar/dropdown/Dropdown";
 import DropdownButton from "./components/navbar/dropdown/DropdownButton";
 import DropdownContent from "./components/navbar/dropdown/DropdownContent";
@@ -51,9 +49,6 @@ function App() {
             </Dropdown>
             <DefaultLink href="/contact-us">Contáctanos</DefaultLink>
           </CenterLinkList>
-          <RightLinkList>
-            <DefaultLink href="/account">Cuenta</DefaultLink>
-          </RightLinkList>
         </LinkListContainer>
       </Navbar>
       <BrowserRouter>
@@ -62,7 +57,6 @@ function App() {
           <Route path="/news" element={<News />} />
           <Route path="/news/:id" element={<NewsArticle />} />
           <Route path="/contact-us" element={<ContactUs />} />
-          <Route path="/account" element={<Account />} />
         </Routes>
       </BrowserRouter>
     </>
