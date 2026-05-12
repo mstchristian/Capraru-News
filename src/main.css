@@ -13,6 +13,10 @@
   --new-preview-background-color: #fafbfd;
   --contact-us-background-color: #fafbfd;
   --contact-us-input-border-color: #ccc;
+  --contact-us-button-border-color: #191919;
+  --contact-us-button-hover-background-color: #f80000;
+  --contact-us-button-text-hover-color: #fff;
+
   --navbar-height: 90px;
   --category-bar-height: 85px;
 

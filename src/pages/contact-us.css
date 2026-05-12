@@ -4,7 +4,8 @@
 }
 
 .contact-us__content {
-  margin: 50px 100px;
+  margin: 25px 100px;
+  padding: 5px;
   background-color: var(--contact-us-background-color);
   border: solid 1px #000;
   border-radius: 7px;
@@ -19,13 +20,21 @@
   width: 75%;
 }
 
+.contact-us__label {
+  align-self: center;
+}
+
 .contact-us__input {
   border: solid 1px var(--contact-us-input-border-color);
   border-radius: 12px;
   height: 25px;
-  margin: 15px 0;
+  margin: 5px 0;
   padding: 5px;
   font-weight: 500;
+}
+
+.contact-us__input:hover {
+  cursor: text;
 }
 
 .contact-us__input:focus {
@@ -45,4 +54,41 @@
 .contact-us__textarea:focus {
   outline: none;
   border-color: var(--contact-us-input-border-color);
+}
+
+.contact-us__submit {
+  width: 100px;
+  height: 30px;
+  border: solid 1px var(--contact-us-button-border-color);
+  border-radius: 7px;
+  background-color: transparent;
+
+  transition:
+    background-color 0.3s ease-in-out,
+    border 0.3s ease-in-out,
+    color 0.3s ease-in-out,
+    width 0.3s ease-in-out,
+    height 0.3s ease-in-out;
+}
+
+.contact-us__submit:hover {
+  cursor: pointer;
+  background-color: var(--contact-us-button-hover-background-color);
+  border: solid 2px var(--contact-us-button-border-color);
+  color: var(--contact-us-button-text-hover-color);
+  width: 105px;
+  height: 35px;
+
+  transition:
+    background-color 0.3s ease-in-out,
+    border 0.3s ease-in-out,
+    color 0.3s ease-in-out,
+    width 0.3s ease-in-out,
+    height 0.3s ease-in-out;
+}
+
+.contact-us__counter {
+  align-self: flex-end;
+  font-size: 12px;
+  color: #555;
 }
