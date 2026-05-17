@@ -16,6 +16,7 @@ import DropdownLink from "./components/navbar/dropdown/DropdownLink";
 import { useDropdown } from "./hooks/useDropdown";
 import { categories, categoryLabels } from "./data/newsData";
 import NewsArticle from "./pages/NewsArticle";
+import RightLinkList from "./components/navbar/link-lists/RightLinkList";
 
 function App() {
   const { activeDropdownId, toggleDropdown } = useDropdown();
@@ -47,8 +48,10 @@ function App() {
                 ))}
               </DropdownContent>
             </Dropdown>
-            <DefaultLink href="/contact-us">Contáctanos</DefaultLink>
           </CenterLinkList>
+          <RightLinkList>
+            <DefaultLink href="/contact-us">Contáctanos</DefaultLink>
+          </RightLinkList>
         </LinkListContainer>
       </Navbar>
       <BrowserRouter>
