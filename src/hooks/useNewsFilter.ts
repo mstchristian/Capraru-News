@@ -1,21 +1,32 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { categories, newsItems } from "../data/newsData";
 
 export function useNewsFilter() {
-  const [selectedCategory, setSelectedCategory] = useState("all");
+  const getInitialCategory = () => {
+    const hash = window.location.hash.replace("#", "");
+
+    return categories.includes(hash) ? hash : "all";
+  };
+
+  const [selectedCategory, setSelectedCategory] =
+    useState(getInitialCategory());
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace("#", "");
+
+      setSelectedCategory(categories.includes(hash) ? hash : "all");
+    };
+
+    window.addEventListener("hashchange", handleHashChange);
+
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
 
   const filteredNews = useMemo(() => {
-    if (selectedCategory === "all") {
-      return newsItems;
-    }
-    return newsItems.filter((item) => item.category === selectedCategory);
-  }, [selectedCategory]);
-
-  const filteredPreviews = useMemo(() => {
-    if (selectedCategory === "all") {
-      return newsItems;
-    }
-    return newsItems.filter((item) => item.category === selectedCategory);
+    return selectedCategory === "all"
+      ? newsItems
+      : newsItems.filter((item) => item.category === selectedCategory);
   }, [selectedCategory]);
 
   return {
@@ -23,6 +34,6 @@ export function useNewsFilter() {
     selectedCategory,
     setSelectedCategory,
     filteredNews,
-    filteredPreviews,
+    filteredPreviews: filteredNews,
   };
 }

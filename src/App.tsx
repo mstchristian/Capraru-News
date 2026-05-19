@@ -42,7 +42,7 @@ function App() {
                 isOpen={activeDropdownId === "categories-dropdown"}
               >
                 {categories.slice(1, 4).map((category) => (
-                  <DropdownLink key={category}>
+                  <DropdownLink key={category} href={`#${category}`}>
                     {categoryLabels[category]}
                   </DropdownLink>
                 ))}
