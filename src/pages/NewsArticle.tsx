@@ -50,7 +50,7 @@ function NewsArticle() {
             similarNews.map((item) => (
               <Link
                 key={item.id}
-                to={`/news-article/${item.id}`}
+                to={`/news/${item.id}`}
                 className="news-article__similar-link"
               >
                 <NewPreview
