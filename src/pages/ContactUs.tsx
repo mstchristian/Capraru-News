@@ -22,12 +22,12 @@ function ContactUs() {
   });
 
   if (result.success) {
-    alert("Mensaje enviado 🚀");
+    alert("Mensaje enviado");
     setName("");
     setEmail("");
     setText("");
   } else {
-    alert("Error al enviar ❌");
+    alert("Error al enviar");
   }
 };
 
