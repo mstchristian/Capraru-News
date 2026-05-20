@@ -17,5 +17,6 @@ export const useTextCounter = (maxLength: number) => {
     text,
     handleTextChange,
     currentLength: text.length,
+    setText,
   };
 };

@@ -1,8 +1,14 @@
 import "./contact-us.css";
 import { useTextCounter } from "../hooks/useTextCounter";
+import { useSafeText } from "../hooks/useSafeText";
+import { useState } from "react";
 
 function ContactUs() {
-  const { text, handleTextChange, currentLength } = useTextCounter(5000);
+  const { text, currentLength, setText } = useTextCounter(5000);
+  const { handleSafeInput } = useSafeText();
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
 
   return (
     <div className="contact-us">
@@ -18,6 +24,8 @@ function ContactUs() {
             id="name"
             name="name"
             required
+            value={name}
+            onChange={handleSafeInput(setName)}
           />
           <label className="contact-us__label" htmlFor="email">
             Correo electrónico
@@ -28,6 +36,8 @@ function ContactUs() {
             id="email"
             name="email"
             required
+            value={email}
+            onChange={handleSafeInput(setEmail)}
           />
           <label className="contact-us__label" htmlFor="message">
             Mensaje
@@ -39,8 +49,8 @@ function ContactUs() {
             rows={10}
             required
             value={text}
-            onChange={handleTextChange}
-          ></textarea>
+            onChange={handleSafeInput(setText)}
+          />
           <p className="contact-us__counter">{currentLength} / 5000</p>
           <button className="contact-us__submit" type="submit">
             Enviar
