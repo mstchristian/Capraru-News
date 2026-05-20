@@ -2,19 +2,40 @@ import "./contact-us.css";
 import { useTextCounter } from "../hooks/useTextCounter";
 import { useSafeText } from "../hooks/useSafeText";
 import { useState } from "react";
+import { useEmail } from "../hooks/useEmail";
 
 function ContactUs() {
   const { text, currentLength, setText } = useTextCounter(5000);
   const { handleSafeInput } = useSafeText();
+  const { sendEmail } = useEmail();
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  const result = await sendEmail({
+    name,
+    email,
+    message: text,
+  });
+
+  if (result.success) {
+    alert("Mensaje enviado 🚀");
+    setName("");
+    setEmail("");
+    setText("");
+  } else {
+    alert("Error al enviar ❌");
+  }
+};
 
   return (
     <div className="contact-us">
       <div className="contact-us__content">
         <h1>Contáctanos</h1>
-        <form className="contact-us__form">
+        <form className="contact-us__form" onSubmit={handleSubmit}>
           <label className="contact-us__label" htmlFor="name">
             Nombre
           </label>
